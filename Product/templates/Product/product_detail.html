@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for product in product %}
+<div style="text-align: center;">
+    <p>name:  {{ product.name }}</p>
+    <p>salesman:  {{ product.author }}</p>
+    <p>description:  {{ product.description }}</p>
+    <img src="{{product.image.url}}" alt=""/>
+    <p>price:  {{ product.price }}</p>
+    <button><a href="{% url 'addtocart' product.slug %}">Add to cart</a></button>
+                <button><a href="{% url 'buy'  %}">Buy</a></button>
+</div>
+{% endfor %}
+{% endblock %}

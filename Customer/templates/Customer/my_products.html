@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for product in products %}
+    <p>{{ product.name }}</p>
+    <p>{{ product.author }}</p>
+    <p>{{ product.description }}</p>
+    <img src="{{ product.image.url }}" alt="">
+    <p>${{ product.price }}</p>
+    {% endfor %}
+    <a href="{% url 'product_create' %}"><button>Create a listing</button></a>
+{% endblock %}

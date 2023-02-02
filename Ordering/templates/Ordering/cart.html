@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for product in products %}
+    {{product.date_added}}
+    {{product.quantity}}
+    {{product.products}}
+    {% endfor %}
+{% endblock %}
