@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 def product_list(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     products = Product.objects.filter(
-        Q(name__incontains=q)|
+        Q(name__icontains=q)|
         Q(description__icontains=q)
     )
     context = {
